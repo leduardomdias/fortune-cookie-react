@@ -1,34 +1,44 @@
 import React, { Component } from "react";
+import './style.css'
+class App extends Component {
 
-class Equipe extends Component {
-  render() {
+  constructor(props){
+    super(props);
+    this.state = {
+      textoFrase : ''
+    }
+
+    this.quebraBiscoito = this.quebraBiscoito.bind(this);
+
+    this.frases = ['Hoje o universo vai te pegar... de jeito.', 'Sua sorte está tão baixa que nem um feitiço reverte.', 'A única coisa dura na sua vida é a realidade.', 'Prepare-se para uma noite inesquecível... de arrependimentos.', 'Seu futuro é quente... igual o inferno que te espera.', 'O destino te reserva surpresas... e todas são golpes.', 'Se a vida fosse um motel, você só pegava o quarto ruim.', 'Hoje você vai se dar bem... só que não.', 'Seu prazer hoje será igual Wi-Fi de hotel: fraco e instável.', 'A única coisa que vai te esquentar hoje é a vergonha alheia.'];
+  }
+
+  quebraBiscoito() {
+    let state = this.state;
+    let numeroAleatorio = Math.floor(Math.random() * this.frases.length);
+    state.textoFrase = '" ' + this.frases[numeroAleatorio] + ' "';
+    this.setState(state);
+  }
+  
+  render(){
     return (
-      <Sobre nome = {this.props.nome} cargo = {this.props.cargo} idade = {this.props.idade} />
+      <div className="container">
+          <img src={require('./assets/biscoito.png')} className="img"/>
+          <Botao  nome = "Abrir biscoito" acaoBtn={this.quebraBiscoito}/>
+          <h3 className="textoFrase">{this.state.textoFrase}</h3>
+      </div>
     );
   }
 }
 
-class Sobre extends Component {
+class Botao extends Component {
   render(){
     return(
       <div>
-        <h2> Olá sou o(a) {this.props.nome} </h2>
-        <h2> Cargo: {this.props.cargo} </h2>
-        <h2> Idade: {this.props.idade} </h2>
-        <hr/>
-    </div> 
-    );
+        <button className="btn" onClick={this.props.acaoBtn}>{this.props.nome}</button>
+      </div>
+    )
   }
-}
-
-function App() {
-  return (
-    <div>
-      <h1>Conheça nossa Equipe!</h1>
-      <Equipe nome="Luis" cargo = "Dev Front" idade = "10"/>
-      <Equipe nome="Rafa" cargo = "Design" idade = "13"/>
-    </div>
-  );
 }
 
 export default App;

@@ -51,3 +51,8 @@ body {
     transition: 0.7s;
     border: 2px solid #dd7310ee;
 }
+
+h1 {
+    color: #000;
+    font-style: italic;
+}

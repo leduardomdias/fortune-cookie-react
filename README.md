@@ -1,5 +1,5 @@
 
-# 🍪 Biscoito da Sorte
+# 🍪 Fortune Cookie
 
 Um simples projeto em React onde o usuário pode abrir um biscoito da sorte e receber uma mensagem aleatória.
 
@@ -11,11 +11,11 @@ Um simples projeto em React onde o usuário pode abrir um biscoito da sorte e re
 ## 🎮 Como Usar
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/leduardomdias/firstReact.git
+   git clone https://github.com/leduardomdias/fortune-cookie-react.git
    ```
 2. Acesse a pasta do projeto:
    ```sh
-   cd firstReact
+   cd fortune-cookie-react
    ```
 3. Instale as dependências:
    ```sh
